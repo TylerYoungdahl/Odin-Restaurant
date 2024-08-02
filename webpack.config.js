@@ -13,12 +13,11 @@ module.exports = {
       inject: "body",
     }),
   ],
+  devtool: "inline-source-map",
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: "./dist",
     },
-    open: true,
-    hot: true,
   },
   output: {
     filename: "[name].bundle.js",
