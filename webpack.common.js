@@ -13,14 +13,17 @@ module.exports = {
       inject: "body",
     }),
   ],
-  devtool: "inline-source-map",
-  devServer: {
-    static: {
-      directory: "./dist",
-    },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
 };
